@@ -3,57 +3,30 @@
 # Copyright 2020 IBM
 #########################################################################################
 
-variable "initialize" {
-  type        = bool
-  description = "Flag indicating that if user want to initialize the hpcs instance. If 'true' then the instance is expected to initialize."
-  default     = false
-}
 
-# Path to which CLOUDTKEFILES has to be exported
-variable "tke_files_path" {
+# COS Credentials
+variable "api_key" {
   type        = string
-  description = "Path to which tke files has to be exported"
+  description = "api key of the COS bucket"
 }
-
+variable "cos_crn" {
+  type        = string
+  description = "COS instance CRN"
+}
+variable "endpoint" {
+  type        = string
+  description = "COS endpoint"
+}
+variable "bucket_name" {
+  type        = string
+  description = "COS bucket name"
+}
+# Path to which CLOUDTKEFILES has to be exported
+variable "path" {
+  type        = string
+  description = "Path at which the files are located"
+}
 variable "hpcs_instance_guid" {
   type        = string
   description = "HPCS Instance GUID"
-}
-
-variable "admin1_name" {
-  type        = string
-  description = "First admin name"
-}
-
-variable "admin1_password" {
-  type        = string
-  description = "First admin password"
-}
-
-variable "admin2_name" {
-  type        = string
-  description = "Second admin name"
-}
-
-variable "admin2_password" {
-  type        = string
-  description = "second admin password"
-}
-
-variable "admin_num" {
-  type        = number
-  description = "Number of admins to manage HPCS"
-  default     = 2
-}
-
-variable "threshold_value" {
-  type        = number
-  description = "Threshold value"
-  default     = 2
-}
-
-variable "rev_threshold_value" {
-  type        = number
-  description = "Remove / delete threshold value"
-  default     = 2
 }
